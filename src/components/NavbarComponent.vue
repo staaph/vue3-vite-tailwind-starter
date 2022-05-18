@@ -11,7 +11,9 @@ const { toggleTheme, userTheme } = useDark();
 
 <template>
   <main>
-    <nav class="w-screen h-16 flex flex-row items-center px-4 border-b">
+    <nav
+      class="w-screen h-16 flex flex-row items-center px-4 border-b-[0.1px] border-gray-400"
+    >
       <section class="flex w-screen justify-center">
         <div class="relative flex ml-4 items-center">
           <div
@@ -23,7 +25,7 @@ const { toggleTheme, userTheme } = useDark();
             autocomplete="off"
             ref="searchbar"
             type="text"
-            class="p-2 pl-11 w-full rounded-lg text-sm input dark:border-gray-600 dark:placeholder-gray-400 focus:outline-blue-600 bg-gray-200"
+            class="p-[10px] pl-11 w-full rounded-lg text-sm input dark:border-gray-600 dark:placeholder-gray-400 focus:outline-blue-600 bg-gray-300"
             placeholder="Search..."
           />
           <div
