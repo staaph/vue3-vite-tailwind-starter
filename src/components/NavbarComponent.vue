@@ -25,7 +25,7 @@ const { toggleTheme, userTheme } = useDark();
             autocomplete="off"
             ref="searchbar"
             type="text"
-            class="p-2 pl-10 w-full rounded-lg text-sm input dark:border-gray-600 dark:placeholder-gray-400 focus:outline-blue-600"
+            class="p-2 pl-11 w-full rounded-lg text-sm input dark:border-gray-600 dark:placeholder-gray-400 focus:outline-blue-600"
             placeholder="Search..."
           />
           <div
