@@ -3,9 +3,9 @@ import Sun from '@/components/icons/SunIcon.vue';
 import Moon from '@/components/icons/MoonIcon.vue';
 import SearchIcon from '@/components/icons/SearchIcon.vue';
 import { useDark } from '@/composables/useDark';
-import { useHotKey } from '@/composables/useHotKey';
+import { useSearchFocus } from '@/composables/useSearchFocus';
 
-const { metaKey, searchbar } = useHotKey();
+const { metaKey, searchbar } = useSearchFocus();
 const { toggleTheme, userTheme } = useDark();
 </script>
 

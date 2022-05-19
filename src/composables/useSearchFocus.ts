@@ -1,21 +1,17 @@
 import { ref, type Ref, onMounted, onUnmounted } from 'vue';
 
-export const useHotKey = () => {
+export const useSearchFocus = () => {
   const metaKey: Ref = ref();
   const searchbar: Ref = ref();
 
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
-      if (document.activeElement != document.body) {
-        (document.activeElement as HTMLElement).blur();
-      } else {
-        searchbar.value.focus();
-      }
+      document.activeElement != document.body
+        ? (document.activeElement as HTMLElement).blur()
+        : searchbar.value.focus();
     }
-    if(e.key === 'Escape'){
-      (document.activeElement as HTMLElement).blur();
-    }
+    e.key === 'Escape' ? (document.activeElement as HTMLElement).blur() : null;
   };
 
   onMounted(() => {
