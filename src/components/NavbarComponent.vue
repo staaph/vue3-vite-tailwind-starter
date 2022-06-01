@@ -4,9 +4,12 @@ import Moon from '@/components/icons/MoonIcon.vue';
 import SearchIcon from '@/components/icons/SearchIcon.vue';
 import { useDark } from '@/composables/useDark';
 import { useSearchFocus } from '@/composables/useSearchFocus';
+import { ref } from 'vue';
 
 const { metaKey, searchbar } = useSearchFocus();
 const { toggleTheme, userTheme } = useDark();
+
+const input = ref<string | undefined>();
 </script>
 
 <template>
@@ -27,12 +30,14 @@ const { toggleTheme, userTheme } = useDark();
             type="text"
             class="p-[10px] pl-11 w-full rounded-lg text-sm input dark:border-gray-600 dark:placeholder-gray-400 focus:outline-blue-600 bg-gray-300"
             placeholder="Search..."
+            v-model="input"
           />
           <div
             class="flex absolute inset-y-0 right-0 items-center pr-1 pointer-events-none gap-x-1"
           >
             <div
               class="bg-gray-800 px-1.5 py-0.5 rounded-md scale-90 text-white"
+              v-show="!input"
             >
               <span ref="metaKey">Meta</span>
               <span>&nbsp;+&nbsp;K</span>
